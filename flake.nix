@@ -41,7 +41,7 @@
         };
 
         devShell = nixpkgs.legacyPackages.${system}.mkShell {
-          inherit buildInputs;
+          buildInputs = with pkgs; [ dfu-util ] ++ buildInputs;
         };
       });
 }
